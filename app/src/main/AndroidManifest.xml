@@ -26,8 +26,10 @@
         <!-- Déclaration de l'activité CalendarActivity -->
         <activity android:name=".CalendarActivity" android:exported="true"
             tools:ignore="MissingClass" />
-        <activity android:name=".OutdoorActivity" android:exported="true"
+        <activity android:name=".SportsActivity" android:exported="true"
             tools:ignore="MissingClass" />
+
+        <activity android:name=".SportsFavoritesActivity" />
 
     </application>
 

@@ -5,8 +5,11 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <CalendarView
-        android:id="@+id/calendarView"
+    <!-- Conteneur pour afficher les boutons des sports favoris -->
+    <LinearLayout
+        android:id="@+id/favoritesLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
 </LinearLayout>

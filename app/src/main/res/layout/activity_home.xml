@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <!-- Texte de bienvenue -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue dans l'application !"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"/>
+
+    <!-- Description de l'application -->
+    <TextView
+        android:id="@+id/appDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Découvrez des activités sportives et organisez votre emploi du temps."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"/>
+
+    <!-- GridLayout pour afficher les images 3x3 -->
+    <GridLayout
+        android:id="@+id/imageGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:columnCount="3"
+        android:rowCount="3"
+        app:layout_constraintTop_toBottomOf="@id/appDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <!-- Images dans la grille -->
+        <ImageView
+            android:src="@drawable/fondhome"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/fondhome"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/fondhome"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/fondhome"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/fondhome"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+    </GridLayout>
+
+    <!-- Container pour les boutons -->
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp">
+
+        <!-- Bouton Commencer -->
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Commencer"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:layout_marginEnd="20dp"/>
+
+        <!-- Bouton Calendrier -->
+        <Button
+            android:id="@+id/btnCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calendrier"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

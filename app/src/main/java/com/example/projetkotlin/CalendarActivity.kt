@@ -1,10 +1,11 @@
+// CalendarActivity.kt
 package com.example.projetkotlin
 
 
 import android.os.Bundle
 import android.widget.CalendarView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.projetkotlin.R
 
 class CalendarActivity : AppCompatActivity() {
 
@@ -13,9 +14,9 @@ class CalendarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_calendar)
 
         val calendarView = findViewById<CalendarView>(R.id.calendarView)
-        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
-            val date = "$dayOfMonth/${month + 1}/$year"
-            Toast.makeText(this, "Date sélectionnée : $date", Toast.LENGTH_SHORT).show()
+
+        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            // Gestion des dates sélectionnées ici
         }
     }
 }

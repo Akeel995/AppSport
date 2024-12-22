@@ -34,6 +34,10 @@ android {
         jvmTarget = "11"
     }
     buildToolsVersion = "35.0.0"
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -44,6 +48,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,6 +71,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.7.0")
     implementation("com.google.android.material:material:1.9.0")
 
-    
+    implementation("androidx.cardview:cardview:1.0.0")
+
 
 }
