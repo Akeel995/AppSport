@@ -1,20 +1,26 @@
 package com.example.projetkotlin
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.view.Gravity
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import android.content.Intent
 
 class SportsActivity : AppCompatActivity() {
 
     private val sports = listOf(
-        Sport("Football"),
-        Sport("Basketball"),
-        Sport("Tennis")
+        Sport("Football", R.drawable.football),
+        Sport("Basketball", R.drawable.image7),
+        Sport("Tennis", R.drawable.image9),
+        Sport("Volley", R.drawable.image8),
+        Sport("Handball", R.drawable.image6),
+        Sport("Rugby", R.drawable.image5),
+        Sport("Baseball", R.drawable.image4),
+        Sport("Hockey", R.drawable.image3),
+        Sport("Golf", R.drawable.image2),
+        Sport("Boxe", R.drawable.image1)
     )
 
     private lateinit var sharedPreferences: SharedPreferences
@@ -23,46 +29,69 @@ class SportsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sports)
 
+        // Initialiser SharedPreferences
         sharedPreferences = getSharedPreferences("favorites", Context.MODE_PRIVATE)
 
-        val sportsLayout = findViewById<LinearLayout>(R.id.sportsLayout)
+        // Récupérer le GridLayout dans le fichier XML
+        val sportsLayout = findViewById<GridLayout>(R.id.sportsLayout)
 
-        // Créer un bouton pour chaque sport
+        // Ajouter chaque sport avec son image (en haut) et son bouton (en bas)
         for (sport in sports) {
-            val sportButton = Button(this)
-            sportButton.text = sport.name
-
-            // Ajouter l'action au clic sur le bouton
-            sportButton.setOnClickListener {
-                addToFavorites(sport)
-                Toast.makeText(this, "${sport.name} ajouté aux favoris", Toast.LENGTH_SHORT).show()
+            // Conteneur vertical pour chaque sport
+            val sportLayout = LinearLayout(this).apply {
+                orientation = LinearLayout.VERTICAL
+                gravity = Gravity.CENTER
+                layoutParams = GridLayout.LayoutParams().apply {
+                    width = 0
+                    height = LinearLayout.LayoutParams.WRAP_CONTENT
+                    columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
+                    rowSpec = GridLayout.spec(GridLayout.UNDEFINED)
+                    setMargins(16, 16, 16, 16) // Espacement entre les sports
+                }
             }
 
-            // Ajouter chaque bouton au layout
-            sportsLayout.addView(sportButton)
+            // Ajouter l'image du sport
+            val sportImage = ImageView(this).apply {
+                setImageResource(sport.imageResId)
+                layoutParams = LinearLayout.LayoutParams(140, 140).apply {
+                    setMargins(8, 8, 8, 8) // Espacement entre les images
+                }
+                scaleType = ImageView.ScaleType.CENTER_CROP
+                contentDescription = "Image du sport ${sport.name}" // Description pour l'accessibilité
+            }
+            sportLayout.addView(sportImage)
+
+            // Ajouter le bouton avec le texte du sport
+            val sportButton = Button(this).apply {
+                text = sport.name
+                setBackgroundColor(getColor(R.color.buttonBackground)) // Assurez-vous d'avoir une couleur définie dans `colors.xml`
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+                setOnClickListener {
+                    addToFavorites(sport)
+                    Toast.makeText(this@SportsActivity, "${sport.name} ajouté aux favoris", Toast.LENGTH_SHORT).show()
+                }
+            }
+            sportLayout.addView(sportButton)
+
+            // Ajouter le sportLayout dans le GridLayout
+            sportsLayout.addView(sportLayout)
         }
 
-        // Créer un bouton pour afficher les favoris
-        val viewFavoritesButton = Button(this)
-        viewFavoritesButton.text = "Voir les favoris"
+        // Ajouter le bouton "Voir les favoris" dans le layout XML
+        val viewFavoritesButton = findViewById<Button>(R.id.viewFavoritesButton)
         viewFavoritesButton.setOnClickListener {
             // Naviguer vers la page des favoris
-            val intent = Intent(this, SportsFavoritesActivity::class.java)
+            val intent = Intent(this@SportsActivity, SportsFavoritesActivity::class.java)
             startActivity(intent)
         }
-
-        // Ajouter le bouton "Voir les favoris" au layout
-        sportsLayout.addView(viewFavoritesButton)
     }
 
     private fun addToFavorites(sport: Sport) {
-        // Récupérer les favoris existants
         val favorites = sharedPreferences.getStringSet("favoritesList", mutableSetOf()) ?: mutableSetOf()
-
-        // Ajouter le sport à la liste des favoris
         favorites.add(sport.name)
-
-        // Sauvegarder la nouvelle liste dans SharedPreferences
         with(sharedPreferences.edit()) {
             putStringSet("favoritesList", favorites)
             apply()
@@ -70,4 +99,5 @@ class SportsActivity : AppCompatActivity() {
     }
 }
 
-data class Sport(val name: String)
+// Modèle pour représenter un sport
+data class Sport(val name: String, val imageResId: Int)

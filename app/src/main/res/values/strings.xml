@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">projetKotlin</string>
+    <string name="voir_les_favoris">Voir les favoris</string>
 </resources>

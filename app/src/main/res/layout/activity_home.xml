@@ -20,6 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"/>
 
+
     <!-- Description de l'application -->
     <TextView
         android:id="@+id/appDescription"
@@ -51,7 +52,7 @@
 
         <!-- Images dans la grille -->
         <ImageView
-            android:src="@drawable/fondhome"
+            android:src="@drawable/image1"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="10dp"
@@ -61,7 +62,7 @@
             android:scaleType="centerCrop" />
 
         <ImageView
-            android:src="@drawable/fondhome"
+            android:src="@drawable/image2"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="10dp"
@@ -71,7 +72,7 @@
             android:scaleType="centerCrop" />
 
         <ImageView
-            android:src="@drawable/fondhome"
+            android:src="@drawable/image3"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="10dp"
@@ -81,7 +82,7 @@
             android:scaleType="centerCrop" />
 
         <ImageView
-            android:src="@drawable/fondhome"
+            android:src="@drawable/image4"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="10dp"
@@ -91,7 +92,7 @@
             android:scaleType="centerCrop" />
 
         <ImageView
-            android:src="@drawable/fondhome"
+            android:src="@drawable/image5"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="10dp"
@@ -101,7 +102,7 @@
             android:scaleType="centerCrop" />
 
         <ImageView
-            android:src="@drawable/image"
+            android:src="@drawable/image6"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="10dp"
@@ -111,7 +112,7 @@
             android:scaleType="centerCrop" />
 
         <ImageView
-            android:src="@drawable/image"
+            android:src="@drawable/image7"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="10dp"
@@ -121,7 +122,7 @@
             android:scaleType="centerCrop" />
 
         <ImageView
-            android:src="@drawable/image"
+            android:src="@drawable/image8"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="10dp"
@@ -131,7 +132,7 @@
             android:scaleType="centerCrop" />
 
         <ImageView
-            android:src="@drawable/image"
+            android:src="@drawable/image9"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="10dp"
