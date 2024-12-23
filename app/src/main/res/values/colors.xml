@@ -8,4 +8,6 @@
     <color name="backgroundColor">#F5F5F5</color> <!-- Fond clair -->
     <color name="buttonBackground">#FF5722</color> <!-- Fond bouton sombre -->
     <color name="buttonTextColor">#FFFFFF</color>
+    <color name="buttonbleu">#3B5FE2</color>
+    <color name="bleu">#3B5FE2</color>
 </resources>

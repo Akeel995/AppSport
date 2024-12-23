@@ -2,18 +2,47 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
 
+        android:gravity="center_horizontal">
+
+        <!-- Texte de bienvenue -->
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Application officiel des JO 2024  !"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/buttonbleu"
+            android:layout_marginTop="50dp"
+            android:gravity="center"/>
+
+        <!-- Description de l'application -->
+        <TextView
+            android:id="@+id/appDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cliquez sur un sport pour l'ajouter aux favoris"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:gravity="center"/>
+
+        <!-- Layout pour les sports -->
         <GridLayout
             android:id="@+id/sportsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             android:layout_marginBottom="16dp">
         </GridLayout>
@@ -22,10 +51,9 @@
             android:text="@string/voir_les_favoris"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="2"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
-            android:backgroundTint="#FF9800"
+            android:backgroundTint="@color/buttonBackground"
             android:textColor="#FFFFFF"
             android:layout_marginBottom="16dp"
             android:id="@+id/viewFavoritesButton"/>

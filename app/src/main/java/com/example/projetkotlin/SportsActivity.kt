@@ -7,20 +7,21 @@ import android.os.Bundle
 import android.view.Gravity
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 class SportsActivity : AppCompatActivity() {
 
     private val sports = listOf(
-        Sport("Football", R.drawable.football),
-        Sport("Basketball", R.drawable.image7),
-        Sport("Tennis", R.drawable.image9),
-        Sport("Volley", R.drawable.image8),
-        Sport("Handball", R.drawable.image6),
-        Sport("Rugby", R.drawable.image5),
-        Sport("Baseball", R.drawable.image4),
-        Sport("Hockey", R.drawable.image3),
-        Sport("Golf", R.drawable.image2),
-        Sport("Boxe", R.drawable.image1)
+        Sport("Course à pied", R.drawable.image1),
+        Sport("Football", R.drawable.image2),
+        Sport("Golf", R.drawable.image3),
+        Sport("Natation", R.drawable.image4),
+        Sport("Ping pong", R.drawable.image5),
+        Sport("Rugby", R.drawable.image6),
+        Sport("Tir à l'arc", R.drawable.image7),
+        Sport("vélo", R.drawable.image8),
+        Sport("badminton", R.drawable.image9),
+        Sport("Tennis", R.drawable.image10)
     )
 
     private lateinit var sharedPreferences: SharedPreferences
@@ -64,7 +65,7 @@ class SportsActivity : AppCompatActivity() {
             // Ajouter le bouton avec le texte du sport
             val sportButton = Button(this).apply {
                 text = sport.name
-                setBackgroundColor(getColor(R.color.buttonBackground)) // Assurez-vous d'avoir une couleur définie dans `colors.xml`
+                setBackgroundColor(ContextCompat.getColor(context, R.color.buttonbleu)) // Assurez-vous d'avoir une couleur définie dans `colors.xml`
                 layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT

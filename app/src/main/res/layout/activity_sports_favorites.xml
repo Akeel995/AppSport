@@ -3,15 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center"> <!-- Cela va centrer tout le contenu du LinearLayout -->
 
-    <!-- Conteneur pour afficher les boutons des sports favoris -->
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:contentDescription="Image de fond"
+        android:scaleType="centerCrop"
+        android:src="@drawable/flm"/>
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liste des Sports favoris  !"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#D5C277"
+        android:layout_marginTop="50dp"
+        android:gravity="center" />
+
+    $
     <LinearLayout
         android:id="@+id/favoritesLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:orientation="vertical" />
-
-
 
 </LinearLayout>

@@ -3,146 +3,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/backgroundColor">
+    android:layout_height="match_parent">
 
     <!-- Texte de bienvenue -->
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenue dans l'application !"
+        android:text="Application officiel des JO 2024  !"
         android:textSize="24sp"
-        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textColor="@color/buttonbleu"
         android:layout_marginTop="50dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"/>
 
-
     <!-- Description de l'application -->
     <TextView
         android:id="@+id/appDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Découvrez des activités sportives et organisez votre emploi du temps."
+        android:text="Vivez les Jeux Olympiques en temps réel, où que vous soyez !"
         android:textSize="16sp"
         android:textColor="@color/black"
+        android:textStyle="bold"
+
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/welcomeText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"/>
 
-    <!-- GridLayout pour afficher les images 3x3 -->
-    <GridLayout
-        android:id="@+id/imageGrid"
-        android:layout_width="wrap_content"
+    <!-- LinearLayout contenant l'image -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:columnCount="3"
-        android:rowCount="3"
+        android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/appDescription"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center">
-
-        <!-- Images dans la grille -->
-        <ImageView
-            android:src="@drawable/image1"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
-            android:gravity="center"
-            android:scaleType="centerCrop" />
+        app:layout_constraintBottom_toTopOf="@id/buttonContainer"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="60dp">
 
         <ImageView
-            android:src="@drawable/image2"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
-            android:gravity="center"
-            android:scaleType="centerCrop" />
+            android:id="@+id/backgroundImage"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:padding="90dp"
+            android:contentDescription="Image de fond"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fondhome"/>
 
-        <ImageView
-            android:src="@drawable/image3"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
-            android:gravity="center"
-            android:scaleType="centerCrop" />
+    </LinearLayout>
 
-        <ImageView
-            android:src="@drawable/image4"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
-            android:gravity="center"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:src="@drawable/image5"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
-            android:gravity="center"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:src="@drawable/image6"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
-            android:gravity="center"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:src="@drawable/image7"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
-            android:gravity="center"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:src="@drawable/image8"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
-            android:gravity="center"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:src="@drawable/image9"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
-            android:gravity="center"
-            android:scaleType="centerCrop" />
-    </GridLayout>
-
-    <!-- Container pour les boutons -->
+    <!-- Conteneur de boutons -->
     <LinearLayout
         android:id="@+id/buttonContainer"
         android:layout_width="match_parent"
@@ -150,7 +68,7 @@
         android:orientation="horizontal"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="50dp">
 
         <!-- Bouton Commencer -->
         <Button
@@ -159,7 +77,7 @@
             android:layout_height="wrap_content"
             android:text="Commencer"
             android:textColor="@color/white"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/buttonBackground"
             android:layout_marginEnd="20dp"/>
 
         <!-- Bouton Calendrier -->
@@ -169,7 +87,7 @@
             android:layout_height="wrap_content"
             android:text="Calendrier"
             android:textColor="@color/white"
-            android:backgroundTint="@color/black"/>
+            android:backgroundTint="@color/buttonbleu"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
